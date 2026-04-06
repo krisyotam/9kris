@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+:root {
+  /* Cirno palette: powder blue, icy white, pastel red accent */
+  --bg: 210 50% 94%;
+  --bg-subtle: 210 45% 88%;
+  --fg: 215 40% 10%;
+  --fg-secondary: 215 25% 28%;
+  --fg-tertiary: 210 30% 45%;
+  --fg-quaternary: 210 20% 58%;
+  --border: 210 40% 78%;
+  --surface: 210 55% 96%;
+  --accent: 355 55% 65%;
+  --accent-hover: 355 60% 55%;
+
+  /* legacy compat */
+  --background: var(--bg);
+  --foreground: var(--fg);
+  --muted: var(--bg-subtle);
+  --muted-foreground: var(--fg-tertiary);
+  --card: var(--surface);
+  --card-foreground: var(--fg);
+}
+
+.dark {
+  /* Deep icy night: slate blues with frost */
+  --bg: 215 40% 8%;
+  --bg-subtle: 215 35% 13%;
+  --fg: 210 40% 92%;
+  --fg-secondary: 210 25% 70%;
+  --fg-tertiary: 210 20% 50%;
+  --fg-quaternary: 210 15% 38%;
+  --border: 215 30% 20%;
+  --surface: 215 40% 10%;
+  --accent: 355 45% 55%;
+  --accent-hover: 355 50% 45%;
+
+  --background: var(--bg);
+  --foreground: var(--fg);
+  --muted: var(--bg-subtle);
+  --muted-foreground: var(--fg-tertiary);
+  --card: var(--surface);
+  --card-foreground: var(--fg);
+}
+
+@theme inline {
+  --color-background: hsl(var(--bg));
+  --color-foreground: hsl(var(--fg));
+  --color-card: hsl(var(--surface));
+  --color-card-foreground: hsl(var(--fg));
+  --color-muted: hsl(var(--bg-subtle));
+  --color-muted-foreground: hsl(var(--fg-tertiary));
+  --color-border: hsl(var(--border));
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: hsl(var(--bg));
+  color: hsl(var(--fg));
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+}
+
+/* smooth transitions for theme toggle */
+* {
+  transition-property: background-color, border-color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
