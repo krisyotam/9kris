@@ -61,6 +61,27 @@ body {
   font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
 }
 
+/* CSS Hover Card */
+@layer base {
+  .hover-card-root { position: relative; }
+  .hover-card-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(100% + 4px);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    pointer-events: none;
+  }
+  .hover-card-root:hover > .hover-card-content,
+  .hover-card-root:focus-within > .hover-card-content {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
 /* smooth transitions for theme toggle */
 * {
   transition-property: background-color, border-color;

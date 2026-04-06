@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --bg: 0 0% 98%;
+  --bg-subtle: 0 0% 95%;
+  --fg: 0 0% 8%;
+  --fg-secondary: 0 0% 30%;
+  --fg-tertiary: 0 0% 50%;
+  --fg-quaternary: 0 0% 65%;
+  --border: 0 0% 88%;
+  --surface: 0 0% 100%;
+
+  /* legacy compat */
+  --background: var(--bg);
+  --foreground: var(--fg);
+  --muted: var(--bg-subtle);
+  --muted-foreground: var(--fg-tertiary);
+  --card: var(--surface);
+  --card-foreground: var(--fg);
+}
+
+.dark {
+  --bg: 0 0% 6%;
+  --bg-subtle: 0 0% 10%;
+  --fg: 0 0% 95%;
+  --fg-secondary: 0 0% 75%;
+  --fg-tertiary: 0 0% 55%;
+  --fg-quaternary: 0 0% 40%;
+  --border: 0 0% 16%;
+  --surface: 0 0% 8%;
+
+  --background: var(--bg);
+  --foreground: var(--fg);
+  --muted: var(--bg-subtle);
+  --muted-foreground: var(--fg-tertiary);
+  --card: var(--surface);
+  --card-foreground: var(--fg);
+}
+
+@theme inline {
+  --color-background: hsl(var(--bg));
+  --color-foreground: hsl(var(--fg));
+  --color-card: hsl(var(--surface));
+  --color-card-foreground: hsl(var(--fg));
+  --color-muted: hsl(var(--bg-subtle));
+  --color-muted-foreground: hsl(var(--fg-tertiary));
+  --color-border: hsl(var(--border));
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: hsl(var(--bg));
+  color: hsl(var(--fg));
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+}
+
+/* smooth transitions for theme toggle */
+* {
+  transition-property: background-color, border-color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
